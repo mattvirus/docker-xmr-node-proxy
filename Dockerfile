@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
-LABEL maintainer="Pedro Lobo <https://github.com/pslobo>"
+LABEL maintainer="matt virus <https://github.com/mattvirus>"
 LABEL Name="Dockerized xmr-node-proxy"
-LABEL Version="1.3"
+LABEL Version="1.4-mo"
     
 RUN export BUILD_DEPS="cmake \
                        pkg-config \
@@ -21,7 +21,7 @@ RUN export BUILD_DEPS="cmake \
     && curl -o- https://deb.nodesource.com/setup_6.x| bash \
     && apt-get install nodejs \
     
-    && git clone https://github.com/Snipa22/xmr-node-proxy /app \
+    && git clone https://github.com/MoneroOcean/xmr-node-proxy.git /app \
     && cd /app && npm install \
     
     && openssl req -subj "/C=IT/ST=Pool/L=Daemon/O=Mining Pool/CN=mining.proxy" \
